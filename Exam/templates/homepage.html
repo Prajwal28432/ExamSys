@@ -8,13 +8,18 @@
 </head>
   <body>
     <style>
-      *{
-        color: #745959;
+      body{
+        background-color: white;
+      }
+      #title{
+        text-align: center;
+        padding: 20px 0 80px 0;
       }
       .main{
         padding-left:3%;
         display: grid;
         grid-template-columns: 45% auto;
+        padding-bottom: 39px;
       }
       button{
         margin:1em;
@@ -25,19 +30,28 @@
         width:45em;
         transition:all 0.5s ease;
       }
-      img:hover{
+      /* img:hover{
         height:40em;
         width:50em;
         transition:all 0.5s ease;
-      }
+      } */
       .prof button[type=submit]:hover{
         background: #87ff9b;
       }
       .student button[type=submit]:hover{
         background: #a3d5ff;
      }
+     footer {
+      
+  background-color: #010101;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+ 
+}
+     
     </style>
-      <nav class="navbar navbar-light" style="background-color:#eb7563">
+      <nav class="navbar navbar-light" style="background-color:#0f0e0e">
         <a class="navbar-brand"  style="color: white; padding-left: 5em;">
           Welcome!
         </a>
@@ -45,15 +59,10 @@
       <div class="main">
         <div class="abt">
           <br><br>
-          <h1>About</h1>
-          <h3>Title: Exam Portal using Django</h3>
-          <br>
-          <h5>Students and teachers have faced inconveniences of varying degrees while trying to handle the examinations in an online format. Our project aims to aid the students and the teachers in the process of conducting exams so that the teachers can be stress free about the time taken by students for conducting exams while being sure that they have not been cheating during the test. </h5>
-          <br>
-          <h5>Our project includes a basic system for teachers to create examinations for their students and schedule them while also being able to check the results of the students. It also includes a system for students to keep track of their past exams and results while being aware of their future examinations.</h5>
-          <br><br>
+          <h1 id="title">Online Examination System</h1>
+          
           <div class="prof">
-            <h2>Professor Section: </h2>
+            <h4>Faculty </h4>
             <div class="row">
               <form method="get" action="{% url 'faculty-login' %}">
                   <button type="submit" class="btn btn-raised btn-lg" style="color: #745959">Login</button>
@@ -65,7 +74,7 @@
           </div>
           <br><br>
           <div class="student">
-            <h2>Student Section: </h2>
+            <h4>Student </h4>
             <div class="row">
               <form method="get" action="{% url 'login' %}">
                   <button type="submit" class="btn btn-raised btn-lg" style="color: #745959">Login</button>
@@ -80,5 +89,8 @@
           <img src="{% static 'img/about.jpg' %}" alt="">
         </div>
     </div>
+    <footer>
+      <p>&copy; 2022 Online Examination System. All rights reserved.</p>
+    </footer>
   </body>
 </html>
